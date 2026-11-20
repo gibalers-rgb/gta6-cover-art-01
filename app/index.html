@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunset Cover Studio — Vice City style cover art</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls">
+    <h1>Sunset Cover Studio</h1>
+    <p>Your photo and a caption, made into Vice City style cover art. Everything stays on this machine — photos are never uploaded.</p>
+
+    <label>Layout
+      <select id="layout">
+        <option value="poster">Poster — hero + two scenes</option>
+        <option value="trio">Trio — three panels</option>
+        <option value="duo">Duo — two panels</option>
+      </select>
+    </label>
+
+    <div id="panels" class="panels"></div>
+
+    <label>Colour grade
+      <select id="grade">
+        <option value="sunset">Sunset — amber to magenta</option>
+        <option value="neon">Neon — pink and cyan</option>
+        <option value="noir">Noir — muted duotone</option>
+        <option value="none">None — photos as they are</option>
+      </select>
+    </label>
+
+    <label>Title <input id="title" type="text" maxlength="24" value="Vice City"></label>
+    <label>Subtitle ribbon <input id="subtitle" type="text" maxlength="24" value="Leonida"></label>
+    <label>Lettering
+      <select id="titleStyle">
+        <option value="bold">Bold sunset gradient</option>
+        <option value="neon">Neon outline</option>
+        <option value="outline">White outline</option>
+      </select>
+    </label>
+
+    <label>Export size
+      <select id="size">
+        <option value="square">1080 x 1080 · square post</option>
+        <option value="portrait">1080 x 1350 · portrait post</option>
+        <option value="wide" selected>1920 x 1080 · wide post</option>
+      </select>
+    </label>
+
+    <div class="actions">
+      <button id="export" type="button">Export PNG</button>
+      <button id="shuffle" type="button" class="ghost">Shuffle samples</button>
+    </div>
+    <p id="status" role="status"></p>
+    <p class="fine">Sample photos are original art made with an image model. Your own lettering and grade — no Rockstar logo, artwork or font.</p>
+  </section>
+  <section class="stage">
+    <canvas id="preview" width="1920" height="1080" aria-label="Cover preview"></canvas>
+    <canvas id="cover" width="1920" height="1080" aria-label="The exported cover" hidden></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
